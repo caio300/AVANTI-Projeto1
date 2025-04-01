@@ -5,10 +5,12 @@ export default {
     extend: {
       colors: {
         primary: '#005CFF',
-        purplePrimary: '#6220C1'
+        purplePrimary: '#6220C1',
+        grayPrimary: '#E7E7EA'
       },
       fontFamily: {
-        nunito: ['Nunito', 'sans-serif'],
+        nunitoSans: ['Nunito Sans', 'sans-serif'],
+        nunito : ['Nunito', 'sans-serif']
       }
     },
   },
