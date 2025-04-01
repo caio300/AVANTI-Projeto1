@@ -3,13 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="./output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+
+    <title>Projeto 1</title>
   </head>
   <body>
-    <div class="text-3xl font-bold bg-green-600">
-      Iniciando projeto
-    </div>
+    <header class="grid-rows-2 font-nunito font-bold flex-col">
+      <div class="bg-primary text-white text-sm text-center py-1 px-6 sm:flex sm:justify-center sm:text-center">
+        <p class="py-1">Ganhe <span class="bg-purplePrimary px-1">R$10,00</span> de desconto no seu primeiro pedido.</p>
+        <p class="sm:py-1 sm:px-1">Utilize o cupom <span class="font-normal">DESCONTO10</span></p>
+      </div>
+      <div class="bg-white flex justify-around py-5">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-11">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+          <img src="../public/logo.svg" alt="Logo Avanti">
+          <div class="relative inline-block">
+            <img src="../public/shoppingCart.svg" alt="Carrinho de compra">
+            <span class="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                2
+            </span>
+          </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative w-full max-w-xl px-3">
+          <input type="text" placeholder="Digite aqui o que você procura" 
+              class="w-full p-3 pl-4 pr-10 border rounded-xl outline-none focus:ring-2 focus:ring-gray-300 text-black font-normal placeholder:text-black placeholder:font-normal">
+          <img src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
+      </div>
+      </div>
+    </header>
   </body>
 </html>
+
+
+
