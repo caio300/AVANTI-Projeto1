@@ -8,6 +8,7 @@ export default {
         purplePrimary: '#6220C1',
         grayPrimary: '#E7E7EA',
         graySecondary: '#DDDDDD',
+        grayTertiary: '#DEDEDE',
         grayScale: '#303030',
         greenPrimary: '#5EC0BE'
       },
