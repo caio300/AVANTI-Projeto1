@@ -9,6 +9,7 @@ export default {
         grayPrimary: '#E7E7EA',
         graySecondary: '#DDDDDD',
         grayTertiary: '#DEDEDE',
+        grayQuaternary: '#F5F5F5',
         grayScale: '#303030',
         greenPrimary: '#5EC0BE'
       },
