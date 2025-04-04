@@ -2,42 +2,153 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/public/logoAA.svg" />
     <link href="./output.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Projeto 1</title>
   </head>
   <body class="font-nunitoSans">
-    <header class="grid-rows-2 font-nunito font-bold flex-col">
+    <header class="fixed z-40 top-0 left-0 w-full grid-rows-2 font-nunito font-bold flex-col justify-center items-center">
       <div class="bg-primary text-white text-sm text-center py-1 px-6 sm:flex sm:justify-center sm:text-center">
         <p class="py-1">Ganhe <span class="bg-purplePrimary px-1">R$10,00</span> de desconto no seu primeiro pedido.</p>
         <p class="sm:py-1 sm:px-1">Utilize o cupom <span class="font-normal">DESCONTO10</span></p>
       </div>
-      <div class="bg-white flex justify-around items-center py-5">
-          <button>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-11">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+
+      <div class="bg-white flex justify-center items-center py-5">
+          <button class="sm:hidden">
+            <img src="../public/menu.svg" alt="Botão para o Menu" class="w-[30px]">
           </button>
-          <img src="../public/logo.svg" alt="Logo Avanti">
+          <img src="../public/logo.svg" alt="Logo Avanti" class="md:pr-[30px]">
+
+          <div class="sm:flex justify-center hidden md:block w-[50%]">
+            <div class="relative w-full max-w-xl px-3">
+              <input type="text" placeholder="Digite aqui o que você procura" 
+                  class="w-full p-3 pl-4 pr-10 border rounded-xl outline-none focus:ring-2 focus:ring-gray-300 text-black font-normal placeholder:text-black placeholder:font-normal">
+              <img src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
+            </div>
+          </div>
+          
+          
+          <div class="md:flex justify-center items-center hidden pr-5">
+            <img src="../public/userIcon.svg" alt="User Icon" class="h-[24px] w-[20px] mr-2">
+            <span class="leading-none">Olá,</br><strong>Nome cliente!</strong></span>
+          </div>
+
           <div class="relative inline-block">
             <img src="../public/shoppingCart.svg" alt="Carrinho de compra">
             <span class="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 2
             </span>
           </div>
+
       </div>
-      <div class="flex justify-center">
-        <div class="relative w-full max-w-xl px-3">
+
+      <div class="flex justify-center sm:hidden bg-white">
+        <div class="relative w-full max-w-xl px-3 py-4">
           <input type="text" placeholder="Digite aqui o que você procura" 
               class="w-full p-3 pl-4 pr-10 border rounded-xl outline-none focus:ring-2 focus:ring-gray-300 text-black font-normal placeholder:text-black placeholder:font-normal">
           <img src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
+        </div>
       </div>
-      </div>
+      
+      <menu id="menuContainer" class="h-auto px-6 sm:flex flex-wrap hidden sm:justify-center gap-0 bg-white">
+        <div class="relative group z-30 flex">
+          <!-- Botão que ativa o menu -->
+          <div class="flex items-center h-full justify-center px-5 py-3 pr-10 cursor-pointer">
+              <img src="../public/menu.svg" alt="Menu Todas as Categorias" class="h-[12px] px-3">
+              <span class="font-nunitoSans whitespace-nowrap text-sm font-bold hover:text-primary">
+                  Todas as Categorias
+              </span>
+          </div>
+
+          <!-- Menu que aparece ao passar o mouse -->
+          <div class="bg-white w-auto h-auto z-30 absolute left-0 top-9 p-4 mt-2 shadow-lg rounded-lg hidden group-hover:flex">
+              <!-- Coloque aqui o conteúdo do menu -->
+              <div class="flex">
+                  <!-- Lista de departamentos -->
+                  <div class="border-r px-4 max-h-[250px] w-auto overflow-x-hidden overflow-y-auto custom-scroll">
+                    <ul class="text-grayScale font-normal text-sm">
+                        <li class="py-2 text-primary font-bold cursor-pointer">Departamento</li>
+                        <li class="py-2 cursor-pointer">Departamento</li>
+                        <li class="py-2 cursor-pointer">Departamento</li>
+                        <li class="py-2 cursor-pointer">Departamento</li>
+                        <li class="py-2 cursor-pointer">Departamento</li>
+                        <li class="py-2 cursor-pointer">Departamento</li>
+                        <li class="py-2 cursor-pointer">Departamento</li>
+                        <li class="py-2 cursor-pointer">Departamento</li>
+                    </ul>
+                  </div>
+      
+                  <!-- Lista de categorias -->
+                  <div class="w-3/4 px-4 flex space-x-8">
+                      <div>
+                          <h5 class="pl-8 text-primary font-bold text-sm">Categoria</h5>
+                          <ul class="text-grayQuinto font-normal text-sm">
+                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
+                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
+                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
+                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
+                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
+                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
+                          </ul>
+                      </div>
+                      <div>
+                          <h5 class="pl-32 text-primary font-bold text-sm">Categoria</h5>
+                          <ul class="text-grayQuinto font-normal text-sm">
+                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
+                          </ul>
+                      </div>
+                      <div>
+                          <h5 class=" text-primary font-bold text-sm">Categoria</h5>
+                          <ul class="text-grayQuinto font-normal text-sm">
+                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                          </ul>
+                      </div>
+                  </div>
+      
+                </div>
+                <!-- Banner -->
+                <div class="relative w-[298px] right-0 overflow-hidden">
+                  <!-- Imagem de fundo -->
+                  <img src="../public/segundoBanner.png" alt="Banner" class="h-[298px] w-full rounded-lg object-cover">
+              
+                  <!-- Sobreposição escura -->
+                  <div class="absolute inset-0 bg-black/40 rounded-lg z-0"></div>
+              
+                  <!-- Texto e botão (Correção na posição) -->
+                  <div class="absolute inset-0 flex flex-col justify-center pl-7 text-white px-4 z-10">
+                      <h2 class="text-2xl font-normal leading-7">
+                          Confira os <br> Produtos <br><span class="font-bold"> Que <br> acabaram <br> De chegar</span>
+                      </h2>
+                      <button class="w-[116px] mt-4 border border-white text-white py-2 px-2 rounded-lg hover:bg-white hover:text-black transition whitespace-nowrap">
+                          VER TODOS
+                      </button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="relative group max-px-5 flex items-center py-3 hover:text-primary">
+            <span class="text-center font-nunitoSans text-sm font-normal">Departamento</span>
+          </div>
+
+        </div>
+        <!---->
+        
+      </menu>
     </header>
 
-    <section class="mt-5 bg-grayPrimary">
+    <section class="pt-[160px] bg-grayPrimary relative z-10">
       <div class="relative h-[306px] sm:h-[500px] flex items-center justify-center overflow-hidden">
         <div class="">
           <img src="../public/baner.jpg" alt="" class="-translate-y-10 -translate-x-28">
@@ -269,7 +380,51 @@
         </div>
       </div>
     </footer>
+
+    <style>
+      .custom-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 9999px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+      }
+
+      .custom-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      
+
+      /* Firefox */
+      .custom-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: #888 transparent;
+      }
+    </style>
   </body>
+  
+
+  <script>
+    const menuCount = 7;
+  
+    const menuContainer = document.getElementById("menuContainer");
+  
+    const menuTemplate = `
+      <div class="px-5 py-3 flex items-center justify-around">
+        <span class="text-center font-nunitoSans text-sm font-normal">Departamento</span>
+      </div>
+    `;
+  
+    for (let i = 0; i < menuCount; i++) {
+      menuContainer.innerHTML += menuTemplate;
+    }
+  </script>
 </html>
 
 
