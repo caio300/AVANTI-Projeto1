@@ -15,7 +15,7 @@
         <p class="sm:py-1 sm:px-1">Utilize o cupom <span class="font-normal">DESCONTO10</span></p>
       </div>
 
-      <div class="bg-white flex justify-center items-center py-5">
+      <div class="bg-white flex sm:justify-center justify-around items-center py-5">
           <button class="sm:hidden">
             <img src="../public/menu.svg" alt="Botão para o Menu" class="w-[30px]">
           </button>
@@ -23,9 +23,10 @@
 
           <div class="sm:flex justify-center hidden md:block w-[50%]">
             <div class="relative w-full max-w-xl px-3">
-              <input type="text" placeholder="Digite aqui o que você procura" 
+              <input id="desktopSearchInput" type="text" placeholder="Digite aqui o que você procura" 
                   class="w-full p-3 pl-4 pr-10 border rounded-xl outline-none focus:ring-2 focus:ring-gray-300 text-black font-normal placeholder:text-black placeholder:font-normal">
-              <img src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
+              <img id="desktopSearchBtn" src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
+              <p id="desktopSearchResult" class="mt-3 text-sm text-gray-700"></p>
             </div>
           </div>
           
@@ -46,13 +47,14 @@
 
       <div class="flex justify-center sm:hidden bg-white">
         <div class="relative w-full max-w-xl px-3 py-4">
-          <input type="text" placeholder="Digite aqui o que você procura" 
+          <input id="mobileSearchInput" type="text" placeholder="Digite aqui o que você procura" 
               class="w-full p-3 pl-4 pr-10 border rounded-xl outline-none focus:ring-2 focus:ring-gray-300 text-black font-normal placeholder:text-black placeholder:font-normal">
-          <img src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
+          <img id="mobileSearchBtn" src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
+          <p id="searchResult" class="mt-3 text-sm text-gray-700"></p>
         </div>
       </div>
       
-      <menu id="menuContainer" class="h-auto px-6 sm:flex flex-wrap hidden sm:justify-center gap-0 bg-white">
+      <menu id="menuContainer" class="h-auto px-6 sm:flex flex-nowrap hidden sm:justify-center gap-0 bg-white">
         <div class="relative group z-30 flex">
           <!-- Botão que ativa o menu -->
           <div class="flex items-center h-full justify-center px-5 py-3 pr-10 cursor-pointer">
@@ -82,29 +84,29 @@
       
                   <!-- Lista de categorias -->
                   <div class="w-3/4 px-4 flex space-x-8">
-                      <div>
-                          <h5 class="pl-8 text-primary font-bold text-sm">Categoria</h5>
+                      <div class="px-5">
+                          <h5 class="text-primary font-bold text-sm">Categoria</h5>
                           <ul class="text-grayQuinto font-normal text-sm">
-                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
-                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
-                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
-                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
-                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
-                              <li class="pl-8 py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
                           </ul>
                       </div>
-                      <div>
-                          <h5 class="pl-32 text-primary font-bold text-sm">Categoria</h5>
+                      <div class="px-5">
+                          <h5 class="text-primary font-bold text-sm">Categoria</h5>
                           <ul class="text-grayQuinto font-normal text-sm">
-                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 px-32 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
+                              <li class="py-1 cursor-pointer">Categoria</li>
                           </ul>
                       </div>
-                      <div>
+                      <div class="px-5">
                           <h5 class=" text-primary font-bold text-sm">Categoria</h5>
                           <ul class="text-grayQuinto font-normal text-sm">
                               <li class="py-1 pr-32 cursor-pointer">Categoria</li>
@@ -175,7 +177,7 @@
         </header>
   
         
-        <section aria-label="Lista de produtos" class="grid grid-cols-2 gap-2">
+        <section id="productCarousel" aria-label="Lista de produtos" class="flex gap-4 overflow-x-auto md:overflow-x-visible">
           <div class="shadow-md rounded-lg w-[174px] h-[365px]">
             <article class="relative bg-white p-3">
               <span class="absolute bg-[#00264E] text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
@@ -188,22 +190,6 @@
               <span class="text-base font-bold">R$ 79,90</span>
               <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
               <button class="w-full h-[40px] bg-primary text-xs text-white font-bold rounded-lg mt-2">Comprar</button>
-            </article>
-          </div>
-  
-          <div class="shadow-md rounded-lg w-[174px] h-[365px]">
-            <article class="relative bg-white p-3">
-              <span class="absolute bg-[#00264E] text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
-              <img src="../public/produto-avanti-Mockup.png" alt="Camiseta branca masculina" class="w-full h-full object-cover">
-              <h3 class="text-sm text-grayScale mt-2">Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit</h3>
-              <div class="flex items-center justify-between mt-1">
-                <p class="text-xs text-grayScale line-through mt-1">R$ 100,00</p>
-                <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
-              </div>
-              <span class="text-base font-bold">R$ 79,90</span>
-              <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
-              <button class="w-full h-[40px] bg-primary text-xs text-white font-bold rounded-lg mt-2">Comprar</button>
-
             </article>
           </div>
         </section>
@@ -412,18 +398,154 @@
 
   <script>
     const menuCount = 7;
-  
     const menuContainer = document.getElementById("menuContainer");
-  
+
     const menuTemplate = `
-      <div class="px-5 py-3 flex items-center justify-around">
+      <div class="menu-item px-5 py-3 flex items-center justify-around">
         <span class="text-center font-nunitoSans text-sm font-normal">Departamento</span>
       </div>
     `;
-  
+
+    // Gera os itens do menu
     for (let i = 0; i < menuCount; i++) {
       menuContainer.innerHTML += menuTemplate;
     }
+
+    // Função para controlar visibilidade
+    function updateMenuVisibility() {
+      const width = window.innerWidth;
+      const items = document.querySelectorAll("#menuContainer .menu-item");
+
+      let visibleCount = 7; // padrão (desktop)
+
+      if (width < 1200) visibleCount = 6;
+      if (width < 1024) visibleCount = 5;
+      if (width < 900) visibleCount = 4;
+      if (width < 768) visibleCount = 3;
+      if (width < 640) visibleCount = 2;
+      if (width < 480) visibleCount = 1;
+
+      items.forEach((item, index) => {
+        item.style.display = index < visibleCount ? "flex" : "none";
+      });
+    }
+
+    // Roda ao carregar e ao redimensionar
+    window.addEventListener("load", updateMenuVisibility);
+    window.addEventListener("resize", updateMenuVisibility);
+
+  </script>
+
+  <script>
+    document.getElementById('mobileSearchBtn').addEventListener('click', function () {
+      const input = document.getElementById('mobileSearchInput').value.trim();
+      const result = document.getElementById('searchResult');
+      
+      if (input) {
+        result.textContent = `Você buscou por: '${input}'`;
+      } else {
+        result.textContent = ''; // limpa se não tiver nada
+      }
+    });
+
+    // Função genérica pra buscar e exibir resultado
+    function setupSearch(inputId, btnId, resultId) {
+      const input = document.getElementById(inputId);
+      const button = document.getElementById(btnId);
+      const result = document.getElementById(resultId);
+
+      button.addEventListener('click', function () {
+        const value = input.value.trim();
+        result.textContent = value ? `Você buscou por: '${value}'` : '';
+      });
+      
+        // Ao clicar fora do input, some o resultado
+      input.addEventListener('blur', function () {
+        setTimeout(() => {
+          result.textContent = '';
+          input.value = '';
+        }, 900);
+      });
+    }
+
+
+    // Inicia busca pra mobile e desktop
+    setupSearch('mobileSearchInput', 'mobileSearchBtn', 'searchResult');
+    setupSearch('desktopSearchInput', 'desktopSearchBtn', 'desktopSearchResult');
+  </script>
+
+  <script>
+    const products = [
+      {
+        tag: 'NOVO',
+        img: '../public/produto-avanti-Mockup.png',
+        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
+        precoAntigo: 'R$ 100,00',
+        desconto: '10% OFF',
+        precoAtual: 'R$ 79,90',
+        parcelas: '10x de R$ 7,90'
+      },
+      {
+        tag: 'NOVO',
+        img: '../public/produto-avanti-Mockup.png',
+        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
+        precoAntigo: 'R$ 100,00',
+        desconto: '10% OFF',
+        precoAtual: 'R$ 79,90',
+        parcelas: '10x de R$ 7,90'
+      },
+      {
+        tag: 'NOVO',
+        img: '../public/produto-avanti-Mockup.png',
+        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
+        precoAntigo: 'R$ 100,00',
+        desconto: '10% OFF',
+        precoAtual: 'R$ 79,90',
+        parcelas: '10x de R$ 7,90'
+      },
+      {
+        tag: 'NOVO',
+        img: '../public/produto-avanti-Mockup.png',
+        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
+        precoAntigo: 'R$ 100,00',
+        desconto: '10% OFF',
+        precoAtual: 'R$ 79,90',
+        parcelas: '10x de R$ 7,90'
+      },
+      
+    ];
+
+    const carousel = document.getElementById("productCarousel");
+
+    function renderProducts() {
+      carousel.innerHTML = ""; // Limpa
+      const isMobile = window.innerWidth < 768;
+      const limit = isMobile ? 2 : 5;
+
+      products.slice(0, limit).forEach(product => {
+        const card = document.createElement("div");
+        card.className = "shadow-md rounded-lg w-[174px] h-[365px] shrink-0"; // shrink-0 evita encolher no flex
+        card.innerHTML = `
+          <article class="relative bg-white p-3">
+            <span class="absolute bg-[#00264E] text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
+            <img src="${product.img}" alt="${product.title}" class="w-full h-full object-cover">
+            <h3 class="text-sm text-grayScale mt-2">${product.nome}</h3>
+            <div class="flex items-center justify-between mt-1">
+              <p class="text-xs text-grayScale line-through mt-1">R$ 100,00</p>
+              <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
+            </div>
+            <span class="text-base font-bold">R$ 79,90</span>
+            <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
+            <button class="w-full h-[40px] bg-primary text-xs text-white font-bold rounded-lg mt-2">Comprar</button>
+          </article>
+        `;
+        carousel.appendChild(card);
+      });
+    }
+
+    // Inicializa e escuta resize
+    renderProducts();
+    window.addEventListener("resize", renderProducts);
   </script>
 </html>
 
