@@ -151,7 +151,7 @@
     </header>
 
     <section class="pt-[160px] bg-grayPrimary relative z-10">
-      <div class="relative h-[306px] sm:h-[500px] flex items-center justify-center overflow-hidden">
+      <div class="relative h-[306px] sm:h-[500px] pt-10 flex items-center justify-center overflow-hidden">
         <div class="">
           <img src="../public/baner.jpg" alt="" class="-translate-y-10 -translate-x-28">
         </div>
@@ -170,29 +170,20 @@
     </section>
     
     <div class="bg-white p-6 grid justify-center ">
-      
         <header class="flex justify-between items-center mb-4">
           <h2 class="text-base font-bold">Lançamentos</h2>
           <a href="#" class="text-grayScale underline text-sm font-bold decoration-">Ver mais</a>
         </header>
   
-        
-        <section id="productCarousel" aria-label="Lista de produtos" class="flex gap-4 overflow-x-auto md:overflow-x-visible">
-          <div class="shadow-md rounded-lg w-[174px] h-[365px]">
-            <article class="relative bg-white p-3">
-              <span class="absolute bg-[#00264E] text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
-              <img src="../public/produto-avanti-Mockup.png" alt="Camiseta branca masculina" class="w-full h-full object-cover">
-              <h3 class="text-sm text-grayScale mt-2">Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit</h3>
-              <div class="flex items-center justify-between mt-1">
-                <p class="text-xs text-grayScale line-through mt-1">R$ 100,00</p>
-                <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
-              </div>
-              <span class="text-base font-bold">R$ 79,90</span>
-              <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
-              <button class="w-full h-[40px] bg-primary text-xs text-white font-bold rounded-lg mt-2">Comprar</button>
-            </article>
-          </div>
-        </section>
+        <div class="relative">
+          <button class="absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
+            <img src="../public/arrowLeft.svg" alt="Seta para esquerda">
+          </button>
+          <section id="productCarousel" aria-label="Lista de produtos" class="w-full relative flex gap-4 overflow-hidden"></section>
+          <button class="absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
+            <img src="../public/arrowRigth.svg" alt="Seta para direita">
+          </button>
+        </div>
         
         <div class="w-full flex items-center justify-center py-4">
           <div class="bottom-3 flex space-x-2">
@@ -512,6 +503,15 @@
         precoAtual: 'R$ 79,90',
         parcelas: '10x de R$ 7,90'
       },
+      {
+        tag: 'NOVO',
+        img: '../public/produto-avanti-Mockup.png',
+        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
+        precoAntigo: 'R$ 100,00',
+        desconto: '10% OFF',
+        precoAtual: 'R$ 79,90',
+        parcelas: '10x de R$ 7,90'
+      },
       
     ];
 
@@ -520,19 +520,22 @@
     function renderProducts() {
       carousel.innerHTML = ""; // Limpa
       const isMobile = window.innerWidth < 768;
-      const limit = isMobile ? 2 : 5;
-
-      products.slice(0, limit).forEach(product => {
+      const mediumDesktop = 768 < window.innerWidth && window.innerWidth < 1000;
+      const limit1 = mediumDesktop ? 3 : 5;
+      const limit2 = isMobile ? 2  : 5;
+      const realLimit = mediumDesktop ? limit1 : limit2;
+      
+      products.slice(0, realLimit).forEach(product => {
         const card = document.createElement("div");
-        card.className = "shadow-md rounded-lg w-[174px] h-[365px] shrink-0"; // shrink-0 evita encolher no flex
+        card.className = "border rounded-lg w-[174px] h-[365px] shrink-0"; // shrink-0 evita encolher no flex
         card.innerHTML = `
           <article class="relative bg-white p-3">
-            <span class="absolute bg-[#00264E] text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
+            <span class="absolute bg-primary text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
             <img src="${product.img}" alt="${product.title}" class="w-full h-full object-cover">
             <h3 class="text-sm text-grayScale mt-2">${product.nome}</h3>
             <div class="flex items-center justify-between mt-1">
               <p class="text-xs text-grayScale line-through mt-1">R$ 100,00</p>
-              <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
+              <span class="bg-[#5EC0BE] text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
             </div>
             <span class="text-base font-bold">R$ 79,90</span>
             <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
