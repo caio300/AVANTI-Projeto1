@@ -55,96 +55,161 @@
       </div>
       
       <menu id="menuContainer" class="h-auto px-6 sm:flex flex-nowrap hidden sm:justify-center gap-0 bg-white">
-        <div class="relative group z-30 flex">
+        <div class="relative z-30 flex">
           <!-- Botão que ativa o menu -->
-          <div class="flex items-center h-full justify-center px-5 py-3 pr-10 cursor-pointer">
+          <div class="group flex items-center h-full justify-center px-5 py-3 pr-10 cursor-pointer">
               <img src="../public/menu.svg" alt="Menu Todas as Categorias" class="h-[12px] px-3">
               <span class="font-nunitoSans whitespace-nowrap text-sm font-bold hover:text-primary">
                   Todas as Categorias
               </span>
+              <!-- Menu que aparece ao passar o mouse -->
+              <div class="bg-white w-auto h-auto z-30 absolute left-0 top-9 p-4 mt-2 shadow-lg rounded-lg hidden group-hover:flex">
+                <!-- Coloque aqui o conteúdo do menu -->
+                <div class="flex">
+                    <!-- Lista de departamentos -->
+                    <div class="border-r pl-4 max-h-[250px] w-auto overflow-x-hidden overflow-y-auto custom-scroll">
+                      <ul class="text-grayScale font-normal text-sm">
+                          <li class="py-2 text-primary font-bold cursor-pointer flex items-center">Departamento<span class="pl-9"><img src="../public/arrow.svg" alt="Entrar neste Departamento"></span></li>
+                          <li class="py-2 cursor-pointer flex items-center">Departamentos<span class="pl-9 pr-2"><img src="../public/arrow.svg" alt="Entrar neste Departamento"></span></li>
+                          <li class="py-2 cursor-pointer flex items-center">Departamentos<span class="pl-9 pr-2"><img src="../public/arrow.svg" alt="Entrar neste Departamento"></span></li>
+                          <li class="py-2 cursor-pointer flex items-center">Departamentos<span class="pl-9 pr-2"><img src="../public/arrow.svg" alt="Entrar neste Departamento"></span></li>
+                          <li class="py-2 cursor-pointer flex items-center">Departamentos<span class="pl-9 pr-2"><img src="../public/arrow.svg" alt="Entrar neste Departamento"></span></li>
+                          <li class="py-2 cursor-pointer flex items-center">Departamentos<span class="pl-9 pr-2"><img src="../public/arrow.svg" alt="Entrar neste Departamento"></span></li>
+                          <li class="py-2 cursor-pointer flex items-center">Departamentos<span class="pl-9 pr-2"><img src="../public/arrow.svg" alt="Entrar neste Departamento"></span></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Lista de categorias -->
+                    <div class="w-3/4 px-4 flex space-x-8">
+                        <div class="px-5">
+                            <h5 class="text-primary font-bold text-sm">Categoria</h5>
+                            <ul class="text-grayQuinto font-normal text-sm">
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                            </ul>
+                        </div>
+                        <div class="px-5">
+                            <h5 class="text-primary font-bold text-sm">Categoria</h5>
+                            <ul class="text-grayQuinto font-normal text-sm">
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                                <li class="py-1 cursor-pointer">Categoria</li>
+                            </ul>
+                        </div>
+                        <div class="px-5">
+                            <h5 class=" text-primary font-bold text-sm">Categoria</h5>
+                            <ul class="text-grayQuinto font-normal text-sm">
+                                <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                                <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                                <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                                <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                                <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                                <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                  </div>
+                  <!-- Banner -->
+                  <div class="relative w-[298px] right-0 overflow-hidden">
+                    <!-- Imagem de fundo -->
+                    <img src="../public/segundoBanner.png" alt="Banner" class="h-[298px] w-full rounded-lg object-cover">
+                
+                    <!-- Sobreposição escura -->
+                    <div class="absolute inset-0 bg-black/40 rounded-lg z-0"></div>
+                
+                    <!-- Texto e botão (Correção na posição) -->
+                    <div class="absolute inset-0 flex flex-col justify-center pl-7 text-white px-4 z-10">
+                        <h2 class="text-2xl font-normal leading-7">
+                            Confira os <br> Produtos <br><span class="font-bold"> Que <br> acabaram <br> De chegar</span>
+                        </h2>
+                        <button class="w-[116px] mt-4 border border-white text-white py-2 px-2 rounded-lg hover:bg-white hover:text-black transition whitespace-nowrap">
+                            VER TODOS
+                        </button>
+                    </div>
+                </div>
+              </div>
+            <!--fim-->
           </div>
 
-          <!-- Menu que aparece ao passar o mouse -->
+        
+
+        <div class="relative group max-px-5 flex items-center py-3 hover:text-primary">
+          <span class="text-center font-nunitoSans text-sm font-normal">Departamento</span>
+
           <div class="bg-white w-auto h-auto z-30 absolute left-0 top-9 p-4 mt-2 shadow-lg rounded-lg hidden group-hover:flex">
-              <!-- Coloque aqui o conteúdo do menu -->
-              <div class="flex">
-                  <!-- Lista de departamentos -->
-                  <div class="border-r px-4 max-h-[250px] w-auto overflow-x-hidden overflow-y-auto custom-scroll">
-                    <ul class="text-grayScale font-normal text-sm">
-                        <li class="py-2 text-primary font-bold cursor-pointer">Departamento</li>
-                        <li class="py-2 cursor-pointer">Departamento</li>
-                        <li class="py-2 cursor-pointer">Departamento</li>
-                        <li class="py-2 cursor-pointer">Departamento</li>
-                        <li class="py-2 cursor-pointer">Departamento</li>
-                        <li class="py-2 cursor-pointer">Departamento</li>
-                        <li class="py-2 cursor-pointer">Departamento</li>
-                        <li class="py-2 cursor-pointer">Departamento</li>
+            <!-- Coloque aqui o conteúdo do menu -->
+
+            <div class="flex">
+
+                <!-- Lista de categorias -->
+                <div class="w-3/4 px-4 flex space-x-8">
+                  <div class="pr-5 pl-1">
+                    <h2 class="text-black font-bold text-base mb-4">Departamento</h2>
+                    <h5 class="text-primary font-bold text-sm">Categoria</h5>
+                    <ul class="text-grayQuinto font-normal text-sm">
+                        <li class="py-1 cursor-pointer">Categoria</li>
+                        <li class="py-1 cursor-pointer">Categoria</li>
+                        <li class="py-1 cursor-pointer">Categoria</li>
+                        <li class="py-1 cursor-pointer">Categoria</li>
+                        <li class="py-1 cursor-pointer">Categoria</li>
+                        <li class="py-1 cursor-pointer">Categoria</li>
                     </ul>
                   </div>
-      
-                  <!-- Lista de categorias -->
-                  <div class="w-3/4 px-4 flex space-x-8">
-                      <div class="px-5">
-                          <h5 class="text-primary font-bold text-sm">Categoria</h5>
-                          <ul class="text-grayQuinto font-normal text-sm">
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                          </ul>
-                      </div>
-                      <div class="px-5">
-                          <h5 class="text-primary font-bold text-sm">Categoria</h5>
-                          <ul class="text-grayQuinto font-normal text-sm">
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                              <li class="py-1 cursor-pointer">Categoria</li>
-                          </ul>
-                      </div>
-                      <div class="px-5">
-                          <h5 class=" text-primary font-bold text-sm">Categoria</h5>
-                          <ul class="text-grayQuinto font-normal text-sm">
-                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
-                              <li class="py-1 pr-32 cursor-pointer">Categoria</li>
-                          </ul>
-                      </div>
+                  <div class="px-5 pt-9">
+                      <h5 class="text-primary font-bold text-sm">Categoria</h5>
+                      <ul class="text-grayQuinto font-normal text-sm">
+                          <li class="py-1 cursor-pointer">Categoria</li>
+                          <li class="py-1 cursor-pointer">Categoria</li>
+                          <li class="py-1 cursor-pointer">Categoria</li>
+                          <li class="py-1 cursor-pointer">Categoria</li>
+                          <li class="py-1 cursor-pointer">Categoria</li>
+                          <li class="py-1 cursor-pointer">Categoria</li>
+                      </ul>
                   </div>
-      
+                  <div class="px-5 pt-9">
+                      <h5 class=" text-primary font-bold text-sm">Categoria</h5>
+                      <ul class="text-grayQuinto font-normal text-sm">
+                          <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                          <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                          <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                          <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                          <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                          <li class="py-1 pr-32 cursor-pointer">Categoria</li>
+                      </ul>
+                  </div>
                 </div>
-                <!-- Banner -->
-                <div class="relative w-[298px] right-0 overflow-hidden">
-                  <!-- Imagem de fundo -->
-                  <img src="../public/segundoBanner.png" alt="Banner" class="h-[298px] w-full rounded-lg object-cover">
-              
-                  <!-- Sobreposição escura -->
-                  <div class="absolute inset-0 bg-black/40 rounded-lg z-0"></div>
-              
-                  <!-- Texto e botão (Correção na posição) -->
-                  <div class="absolute inset-0 flex flex-col justify-center pl-7 text-white px-4 z-10">
-                      <h2 class="text-2xl font-normal leading-7">
-                          Confira os <br> Produtos <br><span class="font-bold"> Que <br> acabaram <br> De chegar</span>
-                      </h2>
-                      <button class="w-[116px] mt-4 border border-white text-white py-2 px-2 rounded-lg hover:bg-white hover:text-black transition whitespace-nowrap">
-                          VER TODOS
-                      </button>
-                  </div>
-              </div>
+    
+            </div>
+            <!-- Banner -->
+            <div class="relative w-[298px] right-0 overflow-hidden">
+                <!-- Imagem de fundo -->
+                <img src="../public/segundoBanner.png" alt="Banner" class="h-[298px] w-full rounded-lg object-cover">
+            
+                <!-- Sobreposição escura -->
+                <div class="absolute inset-0 bg-black/40 rounded-lg z-0"></div>
+            
+                <!-- Texto e botão (Correção na posição) -->
+                <div class="absolute inset-0 flex flex-col justify-center pl-7 text-white px-4 z-10">
+                    <h2 class="text-2xl font-normal leading-7">
+                        Confira os <br> Produtos <br><span class="font-bold"> Que <br> acabaram <br> De chegar</span>
+                    </h2>
+                    <button class="w-[116px] mt-4 border border-white text-white py-2 px-2 rounded-lg hover:bg-white hover:text-black transition whitespace-nowrap">
+                        VER TODOS
+                    </button>
+                </div>
+            </div>
           </div>
-
-          <div class="relative group max-px-5 flex items-center py-3 hover:text-primary">
-            <span class="text-center font-nunitoSans text-sm font-normal">Departamento</span>
-          </div>
-
         </div>
+
+      </div>
         <!---->
         
       </menu>
