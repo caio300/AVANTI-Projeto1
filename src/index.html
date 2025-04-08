@@ -393,18 +393,53 @@
     </div>
     
     <footer class="bg-grayQuaternary flex flex-col justify-center items-center gap-6">
-      <div class="p-10">
-        <img src="../public/logo.svg" alt="Logo AVANTI" class="w-[152px]">
+      <div class="md:flex md:pt-16 md:gap-28 w-auto">
+        <div class="flex-col justify-center items-center py-10 ">
+          <div class="flex justify-center items-center pb-10">
+            <img src="../public/logo.svg" alt="Logo AVANTI" class="w-[152px]">
+          </div>
+    
+          <div class="flex gap-10">
+            <img src="../public/instaIcon.svg" alt="logo Instagram" class="w-[22px]">
+            <img src="../public/facebookIcon.svg" alt="logo Facebook" class="w-[12px]">
+            <img src="../public/youtubeIcon.svg" alt="logo Youtube" class="w-[22px]">
+            <img src="../public/tiktokIcon.svg" alt="logo Tiktok" class="w-[22px]">
+          </div>
+        </div>
+
+        <div class="hidden md:block">
+          <div class="flex justify-center items-start">
+            <div class="text-grayScale text-sm leading-7 pr-20">
+              <h4 class="text-xs leading-[100%] text-black pb-3 font-bold">Institucional</h4>
+              <h5>Sobre Nós</h5>
+              <h5>Nossas Lojas</h5>
+              <h5>Privacidade e Segurança</h5>
+              <h5>Termos e Condições</h5>
+            </div>
+  
+            <div class="text-grayScale text-sm leading-7 pr-20">
+              <h4 class="text-xs leading-[100%] text-black pb-3 font-bold">Central de ajuda</h4>
+              <h5>Fale Conoscos</h5>
+              <h5>Frete e Entrega</h5>
+              <h5>Trocas e Devoluções</h5>
+              <h5>Formas de Pagamento</h5>
+              <h5>FAQ</h5>
+            </div>
+
+            <div class="text-grayScale text-sm leading-7 pr-20">
+              <h4 class="text-xs leading-[100%] text-black pb-3 font-bold">Atendimento</h4>
+              <h5><strong>Telefone:</strong> (00) 1234-5678</h5>
+              <h5><strong>E-mail:</strong> exemplo@exemplo.com.br</h5>
+              <h5><strong>Horário de atendimento:</strong><br> Segunda a Sábado: 07h00 às 23h00<br> 
+                Domingos e Feriados:  07h00 às 21h00</h5>
+              
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="flex gap-10 pb-12">
-        <img src="../public/instaIcon.svg" alt="logo Instagram" class="w-[22px]">
-        <img src="../public/facebookIcon.svg" alt="logo Facebook" class="w-[12px]">
-        <img src="../public/youtubeIcon.svg" alt="logo Youtube" class="w-[22px]">
-        <img src="../public/tiktokIcon.svg" alt="logo Tiktok" class="w-[22px]">
-      </div>
-
-      <div class="w-full max-w-md mx-auto bg-white rounded-lg">
+      <div class="w-full max-w-md mx-auto bg-white rounded-lg md:hidden">
         <div class="flex justify-between items-center border-b p-4 cursor-pointer">
             <h5 class="text-base font-semibold">Institucional</h5>
             <span class="text-blue-600"><img src="../public/icon-arrow.svg" alt=""></span>
@@ -421,15 +456,15 @@
         </div>
       </div>
 
-      <div class="w-full flex flex-col p-10 gap-10">
-        <div class="flex justify-around">
+      <div class="w-full flex flex-col p-10 gap-10 md:flex-row md:justify-center md:gap-8">
+        <div class="flex justify-around md:gap-8">
           <img src="../public/amex.svg" alt="Logo Amex" class="h-[20px]">
           <img src="../public/União 32.svg" alt="Logo União" class="h-[20px]">
           <img src="../public/visa.svg" alt="Logo Visa" class="h-[20px]">
           <img src="../public/hipercard.svg" alt="Logo Hipercard" class="h-[20px]">
           <img src="../public/b.svg" alt="Logo Cielo" class="h-[20px]">
         </div>
-        <div class="flex justify-around">
+        <div class="flex justify-around md:gap-8">
           <img src="../public/c.svg" alt="Logo Amex" class="h-[20px]">
           <img src="../public/paypal.svg" alt="Logo União" class="h-[20px]">
           <img src="../public/União 332.svg" alt="Logo Visa" class="h-[20px]">
@@ -437,11 +472,11 @@
         </div>
       </div>
 
-      <div class="py-10 px-4">
+      <div class="py-10 px-4 flex flex-col justify-center items-center">
         <div class="pb-10">
-          <h3 class="text-center font-nunitoSans text-xs font-normal text-grayScale">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</h3>
+          <h3 class="text-center font-nunitoSans text-xs font-normal text-grayScale max-w-[1074px]">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</h3>
         </div>
-        <div class="flex justify-around h-[32px]">
+        <div class="flex justify-around max-w-[295px] gap-5">
           <img src="../public/letsEnc.svg" alt="Logo Let's Encrypt">
           <img src="../public/vtex-pci.svg" alt="Logo Let's Encrypt">
           <img src="../public/logo.svg" alt="Logo Let's Encrypt" class="w-[60px]">
