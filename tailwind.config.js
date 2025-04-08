@@ -12,6 +12,7 @@ export default {
         grayQuaternary: '#F5F5F5',
         grayScale: '#303030',
         grayQuinto: '#656565',
+        graySixth: '#4F4F4F',
         greenPrimary: '#5EC0BE'
       },
       fontFamily: {
