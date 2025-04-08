@@ -368,24 +368,24 @@
       </div>
     </div>
 
-    <div class="h-auto flex flex-col items-center justify-center p-6">
+    <div class="h-auto flex flex-col items-center justify-center p-6 md:mt-16 md:mb-10">
       <div class="w-full max-w-md">
-          <h2 class="text-center text-base font-bold mb-4">
+          <h2 class="text-center text-base md:text-xl font-bold md:mb-4">
               Cadastre-se na nossa <a href="#" class="text-primary">newsletter</a>
           </h2>
       </div>
   
-      <div class="bg-gray-100 rounded-lg w-auto h-[300px]">
-          <form action="#" method="POST" class="flex flex-col gap-6 p-6 w-full">
-              <input type="text" placeholder="Digite seu nome" class="w-[350px] p-3 rounded-lg">
-              <input type="email" placeholder="Digite seu e-mail" class="w-[350px] p-3 rounded-lg">
+      <div class="bg-grayTertiary rounded-lg w-auto h-[300px] md:h-auto md:w-auto md:py-16 md:px-36">
+          <form action="#" method="POST" class="flex flex-col gap-6 p-6 w-full md:flex-row">
+              <input type="text" placeholder="Digite seu nome" class="mx-w-[350px] p-3 rounded-lg">
+              <input type="email" placeholder="Digite seu e-mail" class="max-w-[350px] p-3 rounded-lg">
               
               <div class="flex items-center text-xs mr-2 ml-2 px-3">
-                  <input type="checkbox" id="termos" class="">
-                  <label for="termos" class="text-[#656565] text-xs font-bold py-1 px-2">Estou de acordo com a <a href="#" class="text-[#656565] text-xs font-bold underline">Política de Privacidade</a></label>
+                  <input type="checkbox" id="termos" class="appearance-none w-4 h-4 bg-white checked:bg-primary rounded border-none">
+                  <label for="termos" class="text-grayQuinto text-xs font-bold py-1 px-2">Estou de acordo com a <a href="#" class="text-grayQuinto text-xs font-bold underline">Política de Privacidade</a></label>
               </div>
               
-              <button type="submit" class="w-full bg-primary text-base text-white font-bold p-3 rounded-lg hover:bg-blue-700 transition">
+              <button type="submit" class="w-full bg-primary text-base text-white font-bold p-3 rounded-lg hover:bg-blue-700 transition md:w-[121px]">
                   Cadastrar
               </button>
           </form>
