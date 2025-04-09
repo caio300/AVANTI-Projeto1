@@ -241,12 +241,12 @@
         </header>
   
         <div class="relative">
-          <button class="absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
+          <button onclick="scrollCarousel('productCarouselOne', -1)" class="absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
             <img src="../public/arrowLeft.svg" alt="Seta para esquerda">
           </button>
-          <section id="productCarouselOne" aria-label="Lista de produtos" class="w-full relative flex gap-4 overflow-hidden"></section>
-          <button class="absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
-            <img src="../public/arrowRigth.svg" alt="Seta para direita">
+          <section id="productCarouselOne" aria-label="Lista de produtos" class="lg:w-[950px] md:w-[570px] w-[360px] relative flex gap-4 overflow-x-auto overflow-hidden scroll-smooth hide-scrollbar"></section>
+          <button onclick="scrollCarousel('productCarouselOne', 1)" class="absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
+            <img src="../public/arrowRight.svg" alt="Seta para direita">
           </button>
         </div>
         
@@ -343,12 +343,12 @@
       </header>
 
       <div class="relative">
-        <button class="absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
+        <button onclick="scrollCarousel('productCarouselTwo', -1)" class="absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
           <img src="../public/arrowLeft.svg" alt="Seta para esquerda">
         </button>
-        <section id="productCarouselTwo" aria-label="Lista de produtos" class="w-full relative flex gap-4 overflow-hidden"></section>
-        <button class="absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
-          <img src="../public/arrowRigth.svg" alt="Seta para direita">
+        <section id="productCarouselTwo" aria-label="Lista de produtos" class="lg:w-[950px] md:w-[570px] w-[360px] relative flex gap-4 overflow-x-auto overflow-hidden scroll-smooth hide-scrollbar"></section>
+        <button onclick="scrollCarousel('productCarouselTwo', 1)"  class="absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
+          <img src="../public/arrowRight.svg" alt="Seta para direita">
         </button>
       </div>
       
@@ -486,6 +486,7 @@
     </footer>
 
     <style>
+      
       .custom-scroll::-webkit-scrollbar {
         width: 4px;
       }
@@ -511,177 +512,250 @@
         scrollbar-color: #888 transparent;
       }
     </style>
-  </body>
-  
 
-  <script>
-    const menuCount = 7;
-    const menuContainer = document.getElementById("menuContainer");
-
-    const menuTemplate = `
-      <div class="menu-item px-5 py-3 flex items-center justify-around">
-        <span class="text-center font-nunitoSans text-sm font-normal">Departamento</span>
-      </div>
-    `;
-
-    // Gera os itens do menu
-    for (let i = 0; i < menuCount; i++) {
-      menuContainer.innerHTML += menuTemplate;
-    }
-
-    // Função para controlar visibilidade
-    function updateMenuVisibility() {
-      const width = window.innerWidth;
-      const items = document.querySelectorAll("#menuContainer .menu-item");
-
-      let visibleCount = 7; // padrão (desktop)
-
-      if (width < 1200) visibleCount = 6;
-      if (width < 1024) visibleCount = 5;
-      if (width < 900) visibleCount = 4;
-      if (width < 768) visibleCount = 3;
-      if (width < 640) visibleCount = 2;
-      if (width < 480) visibleCount = 1;
-
-      items.forEach((item, index) => {
-        item.style.display = index < visibleCount ? "flex" : "none";
-      });
-    }
-
-    // Roda ao carregar e ao redimensionar
-    window.addEventListener("load", updateMenuVisibility);
-    window.addEventListener("resize", updateMenuVisibility);
-
-  </script>
-
-  <script>
-    document.getElementById('mobileSearchBtn').addEventListener('click', function () {
-      const input = document.getElementById('mobileSearchInput').value.trim();
-      const result = document.getElementById('searchResult');
-      
-      if (input) {
-        result.textContent = `Você buscou por: '${input}'`;
-      } else {
-        result.textContent = ''; // limpa se não tiver nada
+    <style>
+      /* Esconde a scrollbar no Chrome, Edge e Safari */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
       }
+
+      /* Esconde a scrollbar no Firefox */
+      .hide-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+    </style>
+
+  </body>
+
+  <script>
+    function scrollCarousel(id, direction) {
+        console.log("Scroll clicado! Direção:", direction);
+        const carousel = document.getElementById(id);
+        const scrollAmount = 220;
+        carousel.scrollBy({
+          left: direction * scrollAmount,
+          behavior: 'smooth'
+        });
+    }
+  </script>
+  
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+
+      const menuCount = 7;
+      const menuContainer = document.getElementById("menuContainer");
+  
+      const menuTemplate = `
+        <div class="menu-item px-5 py-3 flex items-center justify-around">
+          <span class="text-center font-nunitoSans text-sm font-normal">Departamento</span>
+        </div>
+      `;
+  
+      // Gera os itens do menu
+      for (let i = 0; i < menuCount; i++) {
+        menuContainer.innerHTML += menuTemplate;
+      }
+  
+      // Função para controlar visibilidade
+      function updateMenuVisibility() {
+        const width = window.innerWidth;
+        const items = document.querySelectorAll("#menuContainer .menu-item");
+  
+        let visibleCount = 7; // padrão (desktop)
+  
+        if (width < 1200) visibleCount = 6;
+        if (width < 1024) visibleCount = 5;
+        if (width < 900) visibleCount = 4;
+        if (width < 768) visibleCount = 3;
+        if (width < 640) visibleCount = 2;
+        if (width < 480) visibleCount = 1;
+  
+        items.forEach((item, index) => {
+          item.style.display = index < visibleCount ? "flex" : "none";
+        });
+      }
+  
+      // Roda ao carregar e ao redimensionar
+      window.addEventListener("load", updateMenuVisibility);
+      window.addEventListener("resize", updateMenuVisibility);
     });
 
-    // Função genérica pra buscar e exibir resultado
-    function setupSearch(inputId, btnId, resultId) {
-      const input = document.getElementById(inputId);
-      const button = document.getElementById(btnId);
-      const result = document.getElementById(resultId);
-
-      button.addEventListener('click', function () {
-        const value = input.value.trim();
-        result.textContent = value ? `Você buscou por: '${value}'` : '';
-      });
-      
-        // Ao clicar fora do input, some o resultado
-      input.addEventListener('blur', function () {
-        setTimeout(() => {
-          result.textContent = '';
-          input.value = '';
-        }, 900);
-      });
-    }
-
-
-    // Inicia busca pra mobile e desktop
-    setupSearch('mobileSearchInput', 'mobileSearchBtn', 'searchResult');
-    setupSearch('desktopSearchInput', 'desktopSearchBtn', 'desktopSearchResult');
   </script>
 
   <script>
-    const products = [
-      {
-        tag: 'NOVO',
-        img: '../public/produto-avanti-Mockup.png',
-        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
-        precoAntigo: 'R$ 100,00',
-        desconto: '10% OFF',
-        precoAtual: 'R$ 79,90',
-        parcelas: '10x de R$ 7,90'
-      },
-      {
-        tag: 'NOVO',
-        img: '../public/produto-avanti-Mockup.png',
-        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
-        precoAntigo: 'R$ 100,00',
-        desconto: '10% OFF',
-        precoAtual: 'R$ 79,90',
-        parcelas: '10x de R$ 7,90'
-      },
-      {
-        tag: 'NOVO',
-        img: '../public/produto-avanti-Mockup.png',
-        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
-        precoAntigo: 'R$ 100,00',
-        desconto: '10% OFF',
-        precoAtual: 'R$ 79,90',
-        parcelas: '10x de R$ 7,90'
-      },
-      {
-        tag: 'NOVO',
-        img: '../public/produto-avanti-Mockup.png',
-        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
-        precoAntigo: 'R$ 100,00',
-        desconto: '10% OFF',
-        precoAtual: 'R$ 79,90',
-        parcelas: '10x de R$ 7,90'
-      },
-      {
-        tag: 'NOVO',
-        img: '../public/produto-avanti-Mockup.png',
-        nome: 'Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit',
-        precoAntigo: 'R$ 100,00',
-        desconto: '10% OFF',
-        precoAtual: 'R$ 79,90',
-        parcelas: '10x de R$ 7,90'
-      },
-      
-    ];
-
-    const carouselOne = document.getElementById("productCarouselOne");
-    const carouselTow = document.getElementById("productCarouselTwo")
-
-    function renderProducts(carousel) {
-      carousel.innerHTML = "";
-      const isMobile = window.innerWidth < 768;
-      const mediumDesktop = 768 < window.innerWidth && window.innerWidth < 1000;
-      const limit1 = mediumDesktop ? 3 : 5;
-      const limit2 = isMobile ? 2  : 5;
-      const realLimit = mediumDesktop ? limit1 : limit2;
-      
-      products.slice(0, realLimit).forEach(product => {
-        const card = document.createElement("div");
-        card.className = "border rounded-lg w-[174px] h-[365px] shrink-0";
-        card.innerHTML = `
-          <article class="relative bg-white p-3">
-            <span class="absolute bg-primary text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
-            <img src="${product.img}" alt="${product.title}" class="w-full h-full object-cover">
-            <h3 class="text-sm text-grayScale mt-2">${product.nome}</h3>
-            <div class="flex items-center justify-between mt-1">
-              <p class="text-xs text-grayScale line-through mt-1">R$ 100,00</p>
-              <span class="bg-[#5EC0BE] text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
-            </div>
-            <span class="text-base font-bold">R$ 79,90</span>
-            <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
-            <button class="w-full h-[40px] bg-primary text-xs text-white font-bold rounded-lg mt-2">Comprar</button>
-          </article>
-        `;
-        carousel.appendChild(card);
+    window.addEventListener("DOMContentLoaded", () => {
+     
+      document.getElementById('mobileSearchBtn').addEventListener('click', function () {
+        const input = document.getElementById('mobileSearchInput').value.trim();
+        const result = document.getElementById('searchResult');
+        
+        if (input) {
+          result.textContent = `Você buscou por: '${input}'`;
+        } else {
+          result.textContent = ''; // limpa se não tiver nada
+        }
       });
-    }
-
-    renderProducts(carouselOne);
-    renderProducts(carouselTow);
-    
-    window.addEventListener("resize",() => {
-      renderProducts(carouselOne);
-      renderProducts(carouselTow);
+  
+      // Função genérica pra buscar e exibir resultado
+      function setupSearch(inputId, btnId, resultId) {
+        const input = document.getElementById(inputId);
+        const button = document.getElementById(btnId);
+        const result = document.getElementById(resultId);
+  
+        button.addEventListener('click', function () {
+          const value = input.value.trim();
+          result.textContent = value ? `Você buscou por: '${value}'` : '';
+        });
+        
+          // Ao clicar fora do input, some o resultado
+        input.addEventListener('blur', function () {
+          setTimeout(() => {
+            result.textContent = '';
+            input.value = '';
+          }, 900);
+        });
+      }
+  
+  
+      // Inicia busca pra mobile e desktop
+      setupSearch('mobileSearchInput', 'mobileSearchBtn', 'searchResult');
+      setupSearch('desktopSearchInput', 'desktopSearchBtn', 'desktopSearchResult');
     });
   </script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      
+      const products = [
+        {
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },
+        {
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },
+        {
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },
+        {
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },
+        {
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },
+        {
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },{
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },{
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },{
+          tag: 'NOVO',
+          img: '../public/produto-avanti-Mockup.png',
+          nome: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+          precoAntigo: 'R$ 100,00',
+          desconto: '10% OFF',
+          precoAtual: 'R$ 79,90',
+          parcelas: '10x de R$ 7,90'
+        },
+        
+      ];
+  
+      const carouselOne = document.getElementById("productCarouselOne");
+      const carouselTwo = document.getElementById("productCarouselTwo")
+  
+  
+  
+      function renderProducts(carousel) {
+        carousel.innerHTML = "";
+        const isMobile = window.innerWidth < 768;
+        const mediumDesktop = 768 < window.innerWidth && window.innerWidth < 1000;
+        const limit1 = mediumDesktop ? 3 : 5;
+        const limit2 = isMobile ? 2  : 5;
+        const realLimit = mediumDesktop ? limit1 : limit2;
+        
+        products.forEach(product => {
+          const card = document.createElement("div");
+          card.className = "flex-shrink-0 border rounded-lg w-[174px] h-auto transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl";
+          card.innerHTML = `
+            <article class="relative bg-white p-3">
+              <span class="absolute bg-primary text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
+              <img src="${product.img}" alt="${product.title}" class="w-full h-full object-cover">
+              <h3 class="text-sm text-grayScale mt-2">${product.nome}</h3>
+              <div class="flex items-center justify-between mt-1">
+                <p class="text-xs text-grayScale line-through mt-1">R$ 100,00</p>
+                <span class="bg-[#5EC0BE] text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
+              </div>
+              <span class="text-base font-bold">R$ 79,90</span>
+              <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
+              <button class="w-full h-[40px] bg-primary text-xs text-white font-bold rounded-lg mt-2">Comprar</button>
+            </article>
+          `;
+          carousel.appendChild(card);
+        });
+      }
+  
+      
+  
+      renderProducts(carouselOne);
+      renderProducts(carouselTwo);
+      
+      window.addEventListener("resize",() => {
+        renderProducts(carouselOne);
+        renderProducts(carouselTwo);
+      });
+    });
+
+  </script>
+
 </html>
 
 
