@@ -241,12 +241,14 @@
         </header>
   
         <div class="relative">
-          <button onclick="scrollCarousel('productCarouselOne', -1)" class="absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
-            <img src="../public/arrowLeft.svg" alt="Seta para esquerda">
+          <button onclick="scrollCarousel('productCarouselOne', -1)" class="group absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20 hover:bg-primary">
+            <img src="../public/arrowLeft.svg" alt="Seta para esquerda" class="transition duration-300">
+            <img src="../public/arrowLeftWhite.svg" alt="Seta para esquerda" class="absolute hidden transition duration-300 group-hover:block">
           </button>
-          <section id="productCarouselOne" aria-label="Lista de produtos" class="lg:w-[950px] md:w-[570px] w-[360px] relative flex gap-4 overflow-x-auto overflow-hidden scroll-smooth hide-scrollbar"></section>
-          <button onclick="scrollCarousel('productCarouselOne', 1)" class="absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
-            <img src="../public/arrowRight.svg" alt="Seta para direita">
+          <section id="productCarouselOne" aria-label="Lista de produtos" class="lg:w-[935px] md:w-[570px] w-[360px] relative flex gap-4 overflow-x-auto overflow-hidden scroll-smooth hide-scrollbar"></section>
+          <button onclick="scrollCarousel('productCarouselOne', 1)" class="group absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20 hover:bg-primary">
+            <img src="../public/arrowRight.svg" alt="Seta para direita" class="transition duration-300">
+            <img src="../public/arrowRightWhite.svg" alt="Seta para esquerda" class="absolute hidden transition duration-300 group-hover:block">
           </button>
         </div>
         
@@ -343,12 +345,14 @@
       </header>
 
       <div class="relative">
-        <button onclick="scrollCarousel('productCarouselTwo', -1)" class="absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
-          <img src="../public/arrowLeft.svg" alt="Seta para esquerda">
+        <button onclick="scrollCarousel('productCarouselTwo', -1)" class="group absolute hidden md:flex -left-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20 hover:bg-primary">
+          <img src="../public/arrowLeft.svg" alt="Seta para esquerda" class="transition duration-300">
+          <img src="../public/arrowLeftWhite.svg" alt="Seta para esquerda" class="absolute hidden transition duration-300 group-hover:block">
         </button>
-        <section id="productCarouselTwo" aria-label="Lista de produtos" class="lg:w-[950px] md:w-[570px] w-[360px] relative flex gap-4 overflow-x-auto overflow-hidden scroll-smooth hide-scrollbar"></section>
-        <button onclick="scrollCarousel('productCarouselTwo', 1)"  class="absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20">
-          <img src="../public/arrowRight.svg" alt="Seta para direita">
+        <section id="productCarouselTwo" aria-label="Lista de produtos" class="lg:w-[935px] md:w-[570px] w-[360px] relative flex gap-4 overflow-x-auto overflow-hidden scroll-smooth hide-scrollbar"></section>
+        <button onclick="scrollCarousel('productCarouselTwo', 1)"  class="group absolute hidden md:flex -right-5 top-1/2 transform -translate-y-1/2 bg-white border border-primary shadow-md p-2 rounded-full z-20 hover:bg-primary">
+          <img src="../public/arrowRight.svg" alt="Seta para direita" class="transition duration-300">
+          <img src="../public/arrowRightWhite.svg" alt="Seta para esquerda" class="absolute hidden transition duration-300 group-hover:block">
         </button>
       </div>
       
