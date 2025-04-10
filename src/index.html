@@ -11,7 +11,7 @@
   <body class="font-nunitoSans">
     <header class="fixed z-40 top-0 left-0 w-full grid-rows-2 font-nunito font-bold flex-col justify-center items-center">
       <div class="bg-primary text-white text-sm text-center py-1 px-6 sm:flex sm:justify-center sm:text-center">
-        <p class="py-1">Ganhe <span class="bg-purplePrimary px-1">R$10,00</span> de desconto no seu primeiro pedido.</p>
+        <p class="py-1">Ganhe <span class="bg-purplePrimary px-1 rounded-md">R$10,00</span> de desconto no seu primeiro pedido.</p>
         <p class="sm:py-1 sm:px-1">Utilize o cupom <span class="font-normal">DESCONTO10</span></p>
       </div>
 
@@ -220,7 +220,12 @@
         <div class="">
           <img src="../public/baner.jpg" alt="" class="-translate-y-10 -translate-x-28">
         </div>
-        <div class="-translate-x-24 font-nunito text-center">
+        <div class="hidden lg:block -translate-x-24 font-nunito text-center">
+          <h2 class="text-[100px] font-bold text-black">SUPER<span class="text-[100px] text-4xl font-light text-black">SALE</span></h2>
+          <p class="text-nowrap text-[25px] text- text-primary font-bold pt-2">ITENS SELECIONADOS COM ATÉ</p>
+          <p class="text-3xl font-bold text-primary py-2">50% OFF</p>
+        </div>
+        <div class="-translate-x-24 font-nunito text-center lg:hidden">
           <h2 class="text-4xl font-bold text-black">SUPER</h2>
           <h3 class="text-4xl font-light text-black">SALE</h3>
           <p class="text-nowrap text-xs text-primary font-bold pt-2">SELECTED ITEMS UP TO</p>
@@ -261,13 +266,13 @@
         </div>
     </div>
 
-    <article class="my-10 md:flex md:justify-center">
+    <article class="my-10 lg:flex lg:justify-center">
       <div class="flex justify-center">
         <img src="../public/caneca.png" alt="Foto de uma caneca preta escrita Avanti" class="w-full sm:w-[652px]">
         
       </div>
-      <div class="flex justify-center items-center w-auto md:w-[525px]">
-        <div class="font-nunito m-6 w-full">
+      <div class="flex justify-center items-center w-auto lg:w-[525px]">
+        <div class="font-nunito m-6 w-full text-center max-w-[652px]">
           <h2 class="font-nunito font-bold text-3xl pb-3">LOREM IPSUM</h2>
           <p class="text-base font-normal">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
           </br>
@@ -276,11 +281,11 @@
       </div>
     </article>
 
-    <article class="bg-grayTertiary p-5 md:flex md:flex-row-reverse md:justify-center md:items-center">
+    <article class="bg-grayTertiary p-5 lg:flex lg:flex-row-reverse lg:justify-center lg:items-center">
       <div class="flex justify-center items-center">
         <img src="../public/segundoBanner.png" alt="Caneca escrita Avanti" class="md:w-[625px]">
       </div>
-      <div class="pt-4 w-full flex-col justify-center items-center text-center md:w-[476px] md:pr-10 md:py-10">
+      <div class="pt-4 w-full flex-col justify-center items-center text-center lg:w-[476px] lg:pr-10 lg:py-10">
         <h2 class="text-graySixth font-nunito font-bold text-xl md:text-3xl">LOREM IPSUM</h2>
         <div class="mt-4 md:mt-12 flex items-center text-left space-x-4 rounded-lg">
           <div>
@@ -323,13 +328,13 @@
       </div>
     </article>
 
-    <article class="my-10 md:flex md:justify-center">
+    <article class="my-10 lg:flex lg:justify-center">
       <div class="flex justify-center">
         <img src="../public/caneca.png" alt="Foto de uma caneca preta escrita Avanti" class="w-full sm:w-[652px]">
         
       </div>
-      <div class="flex justify-center items-center w-auto md:w-[525px]">
-        <div class="font-nunito m-6 w-full">
+      <div class="flex justify-center items-center w-auto lg:w-[525px]">
+        <div class="font-nunito m-6 w-full text-center max-w-[652px]">
           <h2 class="font-nunito font-bold text-3xl pb-3">LOREM IPSUM</h2>
           <p class="text-base font-normal">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
           </br>
@@ -379,8 +384,8 @@
           </h2>
       </div>
   
-      <div class="bg-grayTertiary rounded-lg w-auto h-[300px] md:h-auto md:w-auto md:py-16 md:px-36">
-          <form action="#" method="POST" class="flex flex-col gap-6 p-6 w-full md:flex-row">
+      <div class="bg-grayTertiary rounded-lg w-auto h-[300px] lg:h-auto lg:w-auto lg:py-16 lg:px-36 lg:mx-5">
+          <form action="#" method="POST" class="flex flex-col gap-6 p-6 w-full lg:flex-row">
               <input type="text" placeholder="Digite seu nome" class="mx-w-[350px] p-3 rounded-lg">
               <input type="email" placeholder="Digite seu e-mail" class="max-w-[350px] p-3 rounded-lg">
               
@@ -389,7 +394,7 @@
                   <label for="termos" class="text-grayQuinto text-xs font-bold py-1 px-2">Estou de acordo com a <a href="#" class="text-grayQuinto text-xs font-bold underline">Política de Privacidade</a></label>
               </div>
               
-              <button type="submit" class="w-full bg-primary text-base text-white font-bold p-3 rounded-lg hover:bg-blue-700 transition md:w-[121px]">
+              <button type="submit" class="w-full bg-primary text-base text-white font-bold p-3 rounded-lg hover:bg-blue-700 transition lg:w-[121px]">
                   Cadastrar
               </button>
           </form>
@@ -397,7 +402,7 @@
     </div>
     
     <footer class="bg-grayQuaternary flex flex-col justify-center items-center gap-6">
-      <div class="md:flex md:pt-16 md:gap-28 w-auto">
+      <div class="lg:flex lg:pt-16 lg:gap-28 w-auto">
         <div class="flex-col justify-center items-center py-10 ">
           <div class="flex justify-center items-center pb-10">
             <img src="../public/logo.svg" alt="Logo AVANTI" class="w-[152px]">
@@ -411,7 +416,7 @@
           </div>
         </div>
 
-        <div class="hidden md:block">
+        <div class="hidden lg:block">
           <div class="flex justify-center items-start">
             <div class="text-grayScale text-sm leading-7 pr-20">
               <h4 class="text-xs leading-[100%] text-black pb-3 font-bold">Institucional</h4>
@@ -443,7 +448,7 @@
 
       </div>
 
-      <div class="w-full max-w-md mx-auto bg-white rounded-lg md:hidden">
+      <div class="w-full max-w-md mx-auto bg-white rounded-lg lg:hidden">
         <div class="flex justify-between items-center border-b p-4 cursor-pointer">
             <h5 class="text-base font-semibold">Institucional</h5>
             <span class="text-blue-600"><img src="../public/icon-arrow.svg" alt=""></span>
@@ -460,15 +465,15 @@
         </div>
       </div>
 
-      <div class="w-full flex flex-col p-10 gap-10 md:flex-row md:justify-center md:gap-8">
-        <div class="flex justify-around md:gap-8">
+      <div class="w-full flex flex-col p-10 gap-10 lg:flex-row lg:justify-center lg:gap-8">
+        <div class="flex justify-around lg:gap-8">
           <img src="../public/amex.svg" alt="Logo Amex" class="h-[20px]">
           <img src="../public/União 32.svg" alt="Logo União" class="h-[20px]">
           <img src="../public/visa.svg" alt="Logo Visa" class="h-[20px]">
           <img src="../public/hipercard.svg" alt="Logo Hipercard" class="h-[20px]">
           <img src="../public/b.svg" alt="Logo Cielo" class="h-[20px]">
         </div>
-        <div class="flex justify-around md:gap-8">
+        <div class="flex justify-around lg:gap-8">
           <img src="../public/c.svg" alt="Logo Amex" class="h-[20px]">
           <img src="../public/paypal.svg" alt="Logo União" class="h-[20px]">
           <img src="../public/União 332.svg" alt="Logo Visa" class="h-[20px]">
@@ -728,19 +733,19 @@
         
         products.forEach(product => {
           const card = document.createElement("div");
-          card.className = "flex-shrink-0 border rounded-lg w-[174px] h-auto transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl";
+          card.className = "flex-shrink-0 border rounded-lg w-[174px] h-auto transition-all duration-300 ease-in-out hover:scale-105";
           card.innerHTML = `
             <article class="relative bg-white p-3">
-              <span class="absolute bg-primary text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
+              <span class="absolute bg-blueSecondary text-white text-xs font-light px-1 py-1 rounded">NOVO</span>
               <img src="${product.img}" alt="${product.title}" class="w-full h-full object-cover">
               <h3 class="text-sm text-grayScale mt-2">${product.nome}</h3>
               <div class="flex items-center justify-between mt-1">
-                <p class="text-xs text-grayScale line-through mt-1">R$ 100,00</p>
-                <span class="bg-[#5EC0BE] text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
+                <p class="font-nunitoSans font-normal text-xs text-grayScale line-through mt-1">R$ 100,00</p>
+                <span class="bg-[#5EC0BE] font-nunitoSans underline text-white text-xs font-bold px-2 py-1 rounded">10% OFF</span>
               </div>
               <span class="text-base font-bold">R$ 79,90</span>
-              <p class="text-xs text-grayScale mt-1">Ou em até <span class="font-bold">10x de R$ 7,90</span></p>
-              <button class="w-full h-[40px] bg-primary text-xs text-white font-bold rounded-lg mt-2">Comprar</button>
+              <p class="font-nunitoSans text-xs text-grayScale mt-1">Ou em até <span class="font-nunitoSans font-bold">10x de R$ 7,90</span></p>
+              <button class="w-full h-[40px] bg-primary font-nunito text-sm text-white font-bold rounded-lg mt-2">Comprar</button>
             </article>
           `;
           carousel.appendChild(card);
