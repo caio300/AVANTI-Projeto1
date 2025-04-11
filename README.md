@@ -26,15 +26,18 @@ A proposta envolveu a construção de componentes reutilizáveis, carrossel resp
 
 ## 📦 Instalação e execução
 
-1. Clone o repositório:
-  ```bash
-  git clone https://github.com/seu-usuario/AVANTI-Projeto1.git
+1. **Clone o repositório:**
 
-2. Acesse a pasta do projeto:
-  ```bash
-  cd AVANTI-Projeto1
-
-3. Abra o arquivo index.html diretamente no navegador
-ou use uma extensão como Live Server no VS Code para visualizar.
-  ```bash
-  npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+   ```bash
+   git clone https://github.com/seu-usuario/AVANTI-Projeto1.git
+2.  **Acesse a pasta do projeto:**
+	```bash
+	cd AVANTI-Projeto1
+3. **Instale as dependências:**
+	```bash
+	npm install
+4. **Rode o Tailwind em modo de desenvolvimento:**
+	```bash
+	npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+5. **Visualize o projeto:**  abra o arquivo `index.html` diretamente no navegador  
+ou use a extensão **Live Server** no VS Code para facilitar a visualização.
