@@ -21,13 +21,13 @@
           </button>
           <img src="../public/logo.svg" alt="Logo Avanti" class="md:pr-[30px]">
 
-          <div class="sm:flex justify-center hidden md:block w-[50%]">
+          <div class="relative sm:flex justify-center hidden md:block w-[50%]">
             <div class="relative w-full max-w-xl px-3">
               <input id="desktopSearchInput" type="text" placeholder="Digite aqui o que você procura" 
                   class="w-full p-3 pl-4 pr-10 border rounded-xl outline-none focus:ring-2 focus:ring-gray-300 text-black font-normal placeholder:text-black placeholder:font-normal">
               <img id="desktopSearchBtn" src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
-              <p id="desktopSearchResult" class="mt-3 text-sm text-gray-700"></p>
             </div>
+            <p id="desktopSearchResult" class="absolute mt-10 text-sm text-gray-700"></p>
           </div>
           
           
@@ -45,12 +45,12 @@
 
       </div>
 
-      <div class="flex justify-center sm:hidden bg-white">
+      <div class="relative sm:hidden bg-white">
         <div class="relative w-full max-w-xl px-3 py-4">
           <input id="mobileSearchInput" type="text" placeholder="Digite aqui o que você procura" 
               class="w-full p-3 pl-4 pr-10 border rounded-xl outline-none focus:ring-2 focus:ring-gray-300 text-black font-normal placeholder:text-black placeholder:font-normal">
           <img id="mobileSearchBtn" src="../public/search.svg" alt="Procurar" class="w-5 h-5 absolute right-6 top-1/2 transform -translate-y-1/2">
-          <p id="searchResult" class="mt-3 text-sm text-gray-700"></p>
+          <p id="searchResult" class="absolute text-sm text-gray-700"></p>
         </div>
       </div>
       
@@ -627,39 +627,25 @@
   <script>
     window.addEventListener("DOMContentLoaded", () => {
      
-      document.q('mobileSearchBtn').addEventListener('click', function () {
-        const input = document.getElementById('mobileSearchInput').value.trim();
-        const result = document.getElementById('searchResult');
-        
-        if (input) {
-          result.textContent = `Você buscou por: '${input}'`;
-        } else {
-          result.textContent = ''; // limpa se não tiver nada
-        }
-      });
-  
-      // Função genérica pra buscar e exibir resultado
       function setupSearch(inputId, btnId, resultId) {
         const input = document.getElementById(inputId);
         const button = document.getElementById(btnId);
         const result = document.getElementById(resultId);
-  
+        console.log(input, button, result)
         button.addEventListener('click', function () {
           const value = input.value.trim();
           result.textContent = value ? `Você buscou por: '${value}'` : '';
         });
         
-          // Ao clicar fora do input, some o resultado
-        input.addEventListener('blur', function () {
+        /* input.addEventListener('blur', function () {
           setTimeout(() => {
             result.textContent = '';
             input.value = '';
           }, 900);
-        });
+        });*/
       }
   
   
-      // Inicia busca pra mobile e desktop
       setupSearch('mobileSearchInput', 'mobileSearchBtn', 'searchResult');
       setupSearch('desktopSearchInput', 'desktopSearchBtn', 'desktopSearchResult');
     });
