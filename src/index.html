@@ -231,7 +231,7 @@
           <p class="text-nowrap text-xs text-primary font-bold pt-2">SELECTED ITEMS UP TO</p>
           <p class="text-3xl font-bold text-primary py-2">50% OFF</p>
         </div>
-        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div class="absolute md:hidden bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
           <span class="w-2 h-2 bg-black rounded-full"></span>
           <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
           <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
@@ -448,20 +448,45 @@
 
       </div>
 
-      <div class="w-full max-w-md mx-auto bg-white rounded-lg lg:hidden">
+      <div class="w-full h-auto max-w-md mx-auto bg-white rounded-lg lg:hidden">
         <div class="flex justify-between items-center border-b p-4 cursor-pointer">
+          <button onclick="toggleAccordion('item1')" class="flex justify-between items-center w-full p-4 font-bold text-left">
             <h5 class="text-base font-semibold">Institucional</h5>
-            <span class="text-blue-600"><img src="../public/icon-arrow.svg" alt=""></span>
+            <span id="icon1"><img src="../public/icon-arrow.svg" alt=""></span>
+          </button>
+        </div>
+        <div id="item1" class="hidden px-6 py-4 text-sm text-gray-600">
+          <h5>Sobre Nós</h5>
+          <h5>Nossas Lojas</h5>
+          <h5>Privacidade e Segurança</h5>
+          <h5>Termos e Condições</h5>
         </div>
     
         <div class="flex justify-between items-center border-b p-4 cursor-pointer">
+          <button onclick="toggleAccordion('item2')" class="flex justify-between items-center w-full p-4 font-bold text-left">
             <h5 class="text-base font-semibold">Central de ajuda</h5>
-            <span class="text-blue-600"><img src="../public/icon-arrow.svg" alt=""></span>
+            <span id="icon2"><img src="../public/icon-arrow.svg" alt=""></span>
+          </button>
+        </div>
+        <div id="item2" class="hidden px-6 text-sm text-gray-600 space-y-1">
+          <h5>Fale Conosco</h5>
+          <h5>Frete e Entrega</h5>
+          <h5>Trocas e Devoluções</h5>
+          <h5>Formas de Pagamento</h5>
+          <h5>FAQ</h5>
         </div>
     
-        <div class="flex justify-between items-center p-4 cursor-pointer">
+        <div class="flex justify-between items-center border-b p-4 cursor-pointer">
+          <button onclick="toggleAccordion('item3')" class="flex justify-between items-center w-full p-4 font-bold text-left">
             <h5 class="text-base font-semibold">Atendimento</h5>
-            <span class="text-blue-600"><img src="../public/icon-arrow.svg" alt=""></span>
+            <span id="icon3"><img src="../public/icon-arrow.svg" alt=""></span>
+          </button>
+        </div>
+        <div id="item3" class="hidden px-6 py-4 text-sm text-gray-600 space-y-1">
+          <h5><strong>Telefone:</strong> (00) 1234-5678</h5>
+          <h5><strong>E-mail:</strong> exemplo@exemplo.com.br</h5>
+          <h5><strong>Horário de atendimento:</strong><br> Segunda a Sábado: 07h00 às 23h00<br> 
+            Domingos e Feriados:  07h00 às 21h00</h5>
         </div>
       </div>
 
@@ -535,6 +560,13 @@
       }
     </style>
 
+    <style>
+      .rotate-180 {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+      }
+    </style>
+
   </body>
 
   <script>
@@ -595,7 +627,7 @@
   <script>
     window.addEventListener("DOMContentLoaded", () => {
      
-      document.getElementById('mobileSearchBtn').addEventListener('click', function () {
+      document.q('mobileSearchBtn').addEventListener('click', function () {
         const input = document.getElementById('mobileSearchInput').value.trim();
         const result = document.getElementById('searchResult');
         
@@ -765,6 +797,29 @@
 
   </script>
 
+  <script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById('icon' + id.slice(-1));
+
+      const isOpen = !content.classList.contains('hidden');
+
+      // Fecha todos
+      ['item1', 'item2', 'item3'].forEach((item, index) => {
+        document.getElementById(item).classList.add('hidden');
+        const thisIcon = document.getElementById('icon' + item.slice(-1));
+        thisIcon?.classList.remove('rotate-180');
+        
+
+      });
+
+      // Se não estava aberto, abre o clicado
+      if (!isOpen) {
+        content.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+      }
+    }
+  </script>
 </html>
 
 
